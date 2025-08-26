@@ -1,0 +1,323 @@
+/* Colors / variables */
+:root {
+  --brand-brown: #76593C;
+  --brand-gold: #DDAD3A;
+  --brand-gold-2: #D6A83F;
+  --text-muted: #6c757d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+
+.navbar-solid {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  backdrop-filter: saturate(140%) blur(6px);
+  padding: 1rem 2rem; /* top/bottom padding controls height */
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+  margin-inline: .25rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--brand-gold) !important;
+}
+
+.hero {
+  height: 100vh; /* Full screen height */
+  background: no-repeat center center/cover;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* Dark overlay for readability */
+}
+
+
+/* Buttons */
+.btn-custom {
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--brand-gold-2);
+  color: #fff;
+}
+
+.btn-custom:hover {
+  background-color: var(--brand-gold);
+}
+
+/* Features */
+.custom-line {
+  border: 0;
+  height: 3px;
+  width: 80px;
+  margin: 0 auto;
+  background: var(--brand-gold);
+}
+
+.features-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.feature-box {
+  text-align: center;
+  max-width: 240px;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--brand-gold);
+  margin-bottom: .5rem;
+}
+
+.feature-text {
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.phone-wrap {
+  width: 260px;
+}
+
+.phone-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features-grid > .feature-box:nth-of-type(1) { grid-column: 1; }
+  .features-grid > .feature-box:nth-of-type(2) { grid-column: 3; }
+  .features-grid > .phone-wrap { grid-column: 2; }
+  .features-grid > .feature-box:nth-of-type(3) { grid-column: 1; }
+  .features-grid > .feature-box:nth-of-type(4) { grid-column: 3; }
+  .features-grid > .feature-box:nth-of-type(5) { grid-column: 1; }
+  .features-grid > .feature-box:nth-of-type(6) { grid-column: 3; }
+}
+
+/* Download section */
+.download-section {
+  position: relative;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.download-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top:0; left:0; right:0; bottom:0 */
+  background: rgba(0, 0, 0, 0.6); /* adjust opacity as needed */
+  z-index: 0;
+}
+
+.download-section .container {
+  position: relative;
+  z-index: 1;
+}
+.download-section .overlay {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* Footer */
+.footer {
+  background-color: var(--brand-brown);
+}
+
+.footer .social-icons a {
+  transition: opacity .2s ease;
+}
+.btn-dowload{
+  background-color: #000000;
+  color: white;
+  
+}
+/* Hero background */
+/* Overlay for hero background */
+.login-body {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.login-body .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); /* darker overlay */
+}
+
+/* Card styling */
+.login-form {
+    position: relative;
+    background: var(--brand-brown);
+    padding: 2rem;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.login-form h3 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.login-form .description {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
+/* Input groups */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.input-group .form-icon {
+    padding: 0.75rem;
+    background: rgba(0,0,0,0.2);
+    color: var(--brand-gold);
+}
+
+.input-group .form-control {
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem;
+}
+
+.input-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Button */
+.btn-custom {
+    background: var(--brand-gold);
+    border: none;
+    padding: 0.75rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s;
+    color: #000;
+}
+
+.btn-custom:hover {
+    background: var(--brand-gold-2);
+    color: #000;
+}
+
+/* Links */
+.text-links a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.text-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Error message */
+.error-message {
+    color: #ff4b2b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Simple fade-in */
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+
+
+.contact-form-container {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-form-container .form-title {
+  font-weight: bold;
+  color: #76593C; /* same as your login theme */
+}
+
+.input-custom {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.input-custom:focus {
+  border-color: #76593C;
+  box-shadow: 0 0 8px rgba(118, 89, 60, 0.4);
+}
+
+.btn-custom {
+  background-color: #76593C;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #5b4630;
+  color: #fff;
+}
+
+.modal-content {
+  border-radius: 1.2rem !important;
+}
+
+.modal-body h5 {
+  color: #76593C;
+  font-weight: 600;
+}
+
+.modal-body p {
+  font-size: 15px;
+  line-height: 1.6;
+}

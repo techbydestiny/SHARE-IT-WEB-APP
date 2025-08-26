@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}Welcome {% endblock %}
+
+{% block content %}
+  <!-- ✅ Hero Section -->
+ <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="background-image: url(&quot;{% static 'images/hero-img.jpg' %}&quot;)">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Share It</h1>
+    <p class="lead" style="font-size: large;">is a dynamic, anonymous platform that allows
+      you to easily connect and interact with others.
+      Create your profile and generate a unique link to share with your contacts.<br/>
+      Receive honest feedback from friends, all while keeping their identities private.
+      With Share It, you can send and receive anonymous messages effortlessly and it's completely free!
+    </p>
+    <a href="/login" class="btn btn-warning btn-lg mt-3">Get Started</a>
+  </div>
+</section>
+
+  <!-- ✅ Features Section -->
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Why Choose Us</h2>
+      <hr class="custom-line">
+      <div class="features-grid mt-5">
+         <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h5 class="feature-heading">Unlimited Storage</h5>
+                    <p class="feature-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+         <div class="feature-box feature-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h5 class="feature-heading">Wifi Compatibility</h5>
+                    <p class="feature-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="phone-wrap">
+          <img src="https://cdn.pixabay.com/photo/2022/02/23/20/19/iphone-7031424_1280.png" alt="App" class="phone-image">
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <h5 class="feature-heading">Fast Processing</h5>
+            <p class="feature-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+         <div class="feature-box">
+            <div class="feature-icon">
+                <i class="fas fa-sync"></i>
+            </div>
+            <h5 class="feature-heading">Regular Updates</h5>
+            <p class="feature-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+       
+        <div class="feature-box feature-3">
+           <div class="feature-icon">
+            <i class="fas fa-battery-half"></i>
+            </div>
+            <h5 class="feature-heading">Low Power Consuming</h5>
+            <p class="feature-text">Lorem ipsum dolor sit amet.</p>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!--About-Section-->
+        <div class="about-section" id="about">
+                <div class="container-fluid">
+                    <h2 class="about-header" align="center">About Share It</h2>
+                    <div class="box">
+                        <p style="text-align: center;">Enjoy the freedom of sending and receiving anonymous messages effortlessly—all at no cost. 
+                            <br/> Whether you want to gain insight, share thoughts, or simply engage in meaningful conversations, 
+                            <br/>Share It makes it easy to connect in a secure, judgment-free environment.
+                    </p>
+                        <div class="row text-center">
+                            <!-- Anonymity Card -->
+                            <div class="col-md-3">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="card-body">
+                                <img src="/static/images/an1.png" alt="Anonymity Icon" class="mb-3" width="100px" height="100px">
+                                <h5 class="card-title">Anonymity</h5>
+                                <p class="card-text">Our platform ensures your privacy, keeping you anonymous every time you send or receive a message.</p>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Safe & Secure Card -->
+                            <div class="col-md-3">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="card-body">
+                                <img src="/static/images/an2.png" height="100px" width="100px" alt="Safe & Secure Icon" class="mb-3">
+                                <h5 class="card-title">Safe & Secure</h5>
+                                <p class="card-text">We prioritize your safety with features like message reporting and content moderation.</p>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Platform  Card -->
+                            <div class="col-md-3">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="card-body">
+                                <img src="/static/images/an4.png" height="100px" width="100px" alt="User Friendly icon" class="mb-3">
+                                <h5 class="card-title">Cross Platform</h5>
+                                <p class="card-text"> Share It is accessible on all devices. You can use it directly through any web browser, and through the app.</p>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Easy to Use Card -->
+                            <div class="col-md-3">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="card-body">
+                                <img src="/static/images/an3.png" height="100px" width="100px" alt="User Friendly icon" class="mb-3">
+                                <h5 class="card-title">User Friendly</h5>
+                                <p class="card-text">With a user-friendly interface, it's simple to start using the platform with just a few clicks.</p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+                <!--FAQ Section-->
+        <div class="questions-section">
+            <div class="container my-5">
+                <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+                <p class="text-center mb-5">
+                Have questions about Share It? Below are some of the most common inquiries to help you get started.
+                </p>
+            
+                <div class="row">
+                <!-- First FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>What is Share It?</strong></h5>
+                    <p>Share It is an anonymous messaging platform that allows users to send and receive messages without revealing their identity. You can create a profile, generate a unique link, and share it with friends to get honest feedback.</p>
+                </div>
+            
+                <!-- Second FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>Is Share It free to use?</strong></h5>
+                    <p>Yes, Share It is completely free. You can create your profile, share links, and send or receive messages without any charges.</p>
+                </div>
+            
+                <!-- Third FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>How does Share It protect my privacy?</strong></h5>
+                    <p>We take privacy seriously. All messages on Share It are anonymous unless you choose to reveal your identity. Our platform ensures that your information remains secure and confidential.</p>
+                </div>
+            
+                <!-- Fourth FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>Do I need to download an app to use Share It?</strong></h5>
+                    <p>No, Share It is accessible via any web browser, so there’s no need to download an app. Simply sign up on our website, and you can start using the platform immediately.</p>
+                </div>
+            
+                <!-- Fifth FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>Can I see who sent me a message?</strong></h5>
+                    <p>No, the messages on Share It are completely anonymous unless the sender chooses to reveal their identity. This helps encourage open and honest communication.</p>
+                </div>
+                
+                <!-- Sixth FAQ -->
+                <div class="col-md-6 mb-4">
+                    <h5><strong>How do I share my profile link?</strong></h5>
+                    <p>After creating your profile, you will get a unique link. Simply copy that link and share it with your friends through social media, text messages, or email.</p>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+
+  <!-- ✅ Download Section -->
+  <section class="download-section py-5" style="background-image:url(&quot; {% static 'images/login-hero.jpg' %}&quot;)">
+    <div class="overlay"></div>
+    <div class="container text-center text-white">
+        <h2>Download Share It Today!</h2>
+        <p class="lead">Share It is easy to use, lightweight, and fun! Download the app and get started by creating your profile. Share your unique link with friends and start receiving anonymous messages!</p>
+        
+        <div class="d-flex justify-content-center gap-5">
+            <a href="#" class="btn btn-light btn-lg btn-download">
+                <img src="https://img.icons8.com/ios-filled/50/000000/mac-os.png" alt="App Store" width="24" height="24">
+                Available on App Store
+                </a>
+                <a href="#" class="btn btn-light btn-lg btn-download">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/android-os.png" alt="Play Store" width="24" height="24">
+                    Available on Play Store
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+{%endblock%}
+
+

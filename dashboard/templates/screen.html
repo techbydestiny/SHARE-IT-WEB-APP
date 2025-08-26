@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share It- Send Messages</title>
+      <!-- Latest compiled and minified CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+      <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet"/>
+  
+</head>
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo and Search Bar (left section) -->
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="{% static 'logo.png' %}" width="60px" style="margin-right: 20px;"/>
+
+                        <h3>Send a Message to, {{ user.username }}!</h3>
+                </a>
+
+    
+                <!-- Right section (icons, always visible) -->
+                <div class="d-flex align-items-center">
+                    <a class="btn btn-custom" href="/signup">Create An Account</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="body" style="background-image: url(&quot;{% static 'images/login-hero.jpg' %}&quot;);">
+
+
+        <div class="container-fluid">
+
+            <div class="justified" align="center">
+                <div class="mt-4 p-5 text-white rounded profile-card">
+                    <div class="profile-card-content">
+                        {% if profile.user.username == user.username %}
+                           <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">This is what people will see when they click on your link</h5>
+                        {%endif%}
+                        <p>Share your thoughts and oppions with <b>{{user.username}}!</b>.</p>
+                         {% if messages %}
+                           <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">{{messages}}</h5>
+                        {%endif%}
+                    </div>
+                    <form method="post">
+                    {% csrf_token %}
+                        <div class="button-container">
+                            <textarea name="message" style="width:100%; height: 350px;" placeholder="write your message here.....">
+
+                            </textarea>
+                            <hr style="width: 100%;">
+                            {% if profile.user.username == user.username %}
+                               <button class="btn btn-custom"> Can't Message Yourself! <i class="fa-solid fa-arrow-right"></i></button>
+                            {%else%}
+                                <button class="btn btn-custom" type="submit"> Send <i class="fa-solid fa-arrow-right"></i></button>
+                            {%endif%}
+                        </div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/buttons.js' %}"></script>
+
+</body>
+</html>

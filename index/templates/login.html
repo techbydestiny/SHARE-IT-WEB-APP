@@ -1,0 +1,58 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block title%} Login {%endblock%}
+{%block content%}
+<!--Body-->
+<div class="login-body" style="background-image: url(&quot; {% static 'images/login-hero.jpg' %}&quot;)">
+    <div class="overlay"></div> <!-- dark overlay for contrast -->
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="row justify-content-center w-100">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-form p-4 shadow-lg rounded">
+                    <h3 class="text-center mb-3 text-white">Login</h3>
+                    <p class="description text-center text-light">
+                        Receive anonymous compliments from your friends and send anonymous messages to your friends for free.
+                    </p>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if error %}
+                            <div class="alert alert-danger text-center">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+                        {% if message %}
+                            <div class="alert alert-success text-center">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-dark text-white"><i class="fas fa-envelope"></i></span>
+                            <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-dark text-white"><i class="fas fa-lock"></i></span>
+                            <input type="password" name="upassword" class="form-control" placeholder="Password" aria-label="Password">
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-custom">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                        </div>
+
+                        <div class="text-center text-links mt-4">
+                            <a href="/signup" class="d-block mb-2">Create Account</a>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Sign Up {% endblock %}
+{% block content %}
+<!-- Body -->
+<div class="login-body" style="background-image: url(&quot; {% static 'images/login-hero.jpg' %}&quot;);">
+    <div class="overlay"></div> <!-- dark overlay -->
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="col-md-6 col-lg-4">
+            <div class="login-form text-center">
+                <h3 class="mb-3">Sign Up</h3>
+                <p class="description">Join <strong>Share It</strong> to send anonymous messages and receive compliments for free!</p>
+
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    {% if error %}
+                        <div class="error-message">{{ error }}</div>
+                    {% endif %}
+
+                    <div class="input-group mb-3">
+                        <span class="form-icon"><i class="fas fa-user"></i></span>
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                        <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                        <input type="email" name="uemail" class="form-control" placeholder="Email address" required>
+                    </div>
+                    
+                    <div class="input-group mb-4">
+                        <span class="form-icon"><i class="fas fa-lock"></i></span>
+                        <input type="password" name="upassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-custom">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </div>
+                    
+                    <div class="text-center text-links mt-4">
+                        <a href="/login">Already have an account? Log in</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

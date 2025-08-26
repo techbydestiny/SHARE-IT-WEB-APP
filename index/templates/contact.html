@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Contact Us {% endblock %}
+{% block content %}
+<!-- Contact Form -->
+<div class="container my-5">
+  <div class="contact-form-container shadow-lg p-4 rounded-4">
+    <h3 class="form-title text-center mb-3">📩 Contact Us</h3>
+    <h5 class="text-center mb-3 text-muted">Send us a message or reach out via our socials</h5>
+    <p class="text-center text-muted">
+      Check FAQ to see if your request has already been answered
+      <button class="btn btn-custom ms-2" data-bs-toggle="modal" data-bs-target="#myFAQ">FAQ</button>
+    </p>
+
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control input-custom" id="name" placeholder="Enter your name">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control input-custom" id="email" placeholder="Enter your email">
+      </div>
+
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject</label>
+        <input type="text" class="form-control input-custom" id="subject" placeholder="Enter the subject">
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control input-custom" id="message" rows="5" placeholder="Write your message"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-custom px-5">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+   <!-- FAQ Modal -->
+  <div class="modal fade" id="myFAQ">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">FAQ</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <h2>Here Are The Most Frequently Asked Questions Answered!</h2>
+
+            <h3>What is Share It?</h3>
+            <p>Share It is an anonymous messaging platform that allows users to send and receive messages without revealing their identity. To get started, simply create a free profile, generate a unique link, and share it with your friends. This enables them to provide you with honest feedback while keeping their identities confidential. The best part is that Share It is completely free!</p>
+            
+            <h3>How does Share It protect my anonymity?</h3>
+            <p>At Share It, we prioritize your anonymity. When you send an anonymous message, your data remains secure on our servers. We do not disclose any personal information unless you choose to reveal your identity. This ensures that you can communicate freely without worrying about being identified.</p>
+            
+            <h3>What does Share It’s privacy policy guarantee?</h3>
+            <p>Share It guarantees that your identity is safe with us. We do not store any information about message senders other than their IP addresses. For further details, please read our <a href="terms-and-conditions.html">Terms & Conditions</a>, which outline how we handle your information.</p>
+            
+            <h3>Is Share It safe to use?</h3>
+            <p>Yes, Share It is 100% safe. Our team works diligently to create a positive environment by removing any harmful content. We take strict actions against users who engage in bullying or harassment, ensuring a respectful experience for everyone.</p>
+            
+            <h3>Why can’t I see the messages I received?</h3>
+            <p>Messages you receive may be archived after a certain period. However, you can easily access them in the Archived Messages section within your account settings, so you won't lose any valuable feedback.</p>
+            
+            <h3>How do I enable notifications?</h3>
+            <p>To receive notifications for new messages, make sure you allow site notifications from your web browser. If you have the Share It app installed, it automatically handles notifications for you, so you won't miss any messages.</p>
+            
+            <h3>How can I change my password?</h3>
+            <p>To change your password, go to your account settings in the app and select the "Change Password" option. Follow the prompts to update your password securely.</p>
+            
+            <h3>Can I change my username?</h3>
+            <p>Yes, you can change your username. Simply navigate to your settings and select the "Change Username" option. Keep in mind that once you change it, your previous username will be available for others to use.</p>
+            
+            <h3>How do I recover my Share It account?</h3>
+            <p>To recover your account, visit the "Forgot Password" page and enter your username. You will receive a recovery code via email. Please note that if you did not provide an email during registration, manual recovery will not be possible at this time.</p>
+            
+            <h3>Can I find out who sent me a message?</h3>
+            <p>No, messages sent through Share It are completely anonymous unless the sender chooses to disclose their identity. This feature encourages open communication. If you feel threatened or harassed, you can report the message using our reporting system.</p>
+            
+            <h3>What happens when I report a message?</h3>
+            <p>When you report a message, our support team thoroughly investigates the issue and takes appropriate action against the sender. In serious cases, we may ban the user based on their IP address or Internet Service Provider (ISP) to prevent further harassment.</p>
+            
+            <h3>How can I deactivate my Share It account?</h3>
+            <p>To deactivate your account, simply log out and avoid logging back in. Inactive accounts will be automatically deactivated after a certain period to ensure your privacy.</p>
+            
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

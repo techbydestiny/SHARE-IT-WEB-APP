@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share It - Profile</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet"/>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo + Greeting -->
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="{% static 'logo.png' %}" width="50px" class="me-2"/>
+                    {% if profile %}
+                        <h3 class="hellotext mb-0">Hello, {{ profile.user }}!</h3>
+                    {% endif %}
+                </a>
+
+                <!-- Right section -->
+                <div class="d-flex align-items-center">
+                    <a class="nav-link navbox" title="Archive" href="/dashboard/archieve">
+                        <i class="fa-solid fa-box-archive bright"></i>
+                    </a>
+                    <a class="nav-link navbox" title="Messages" href="/dashboard/messages">
+                        <i class="fab fa-facebook-messenger bright"></i>
+                    </a>
+                    <a class="nav-link navbox" title="Profile" href="/dashboard/">
+                        {% if profile.profile_pic %}
+                            <img src="{{ profile.profile_pic.url }}" alt="Profile" class="profile-pic ms-2 bright">
+                        {% else %}
+                            <img src="{% static 'home/avatar.png' %}" alt="Profile" class="profile-pic ms-2 bright">
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Body Background -->
+    <div class="body" style="background-image: url(&quot;{% static 'images/login-hero.jpg' %}&quot;);">
+
+        <!-- Profile Card -->
+        <div class="container-fluid text-center">
+            <div class="mt-4 p-4 text-white rounded profile-card">
+                <div class="profile-card-content">
+                    {% if profile.profile_pic %}
+                        <img src="{{ profile.profile_pic.url }}" class="rounded mb-2 upload-image"/>
+                    {% else %}
+                        <img src="{% static 'home/avatar.png' %}" class="rounded mb-2 upload-image"/>
+                    {% endif %}
+
+                    <h1>{{ profile.user }}</h1>
+
+                    <small class="d-block mb-2">your url: {{ share_link }}</small>
+                    <p>Share your profile link ❤️ to get responses from your friends.  
+                       Go to "View Messages" to check out the responses 👌</p>
+                </div>
+
+                <!-- Button Section -->
+                <div class="button-container">
+                    <a class="btn btn-custom btn-lg" href="{{share_link}}">
+                        Share <i class="fa-regular fa-share-nodes"></i>
+                    </a>
+                    <a href="https://wa.me/?text={{ share_link }}" target="_blank" class="btn btn-success btn-lg">
+                        WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_link }}" target="_blank" class="btn btn-primary btn-lg">
+                        Facebook <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-danger btn-lg" href="https://www.instagram.com/?url={{ share_link }}" target="_blank">
+                        Instagram <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <button class="btn btn-custom btn-lg" onclick="onMessages()">
+                        View all Messages <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-custom btn-lg" onclick="onSettings()">
+                        Settings <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/buttons.js' %}"></script>
+
+</body>
+</html>
