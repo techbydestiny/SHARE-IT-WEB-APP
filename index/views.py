@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
@@ -104,7 +104,8 @@ def contact(request):
     return render(request, 'contact.html')
 
 def user_screen(request, username):
-    user = get_object_or_404(User, username=username)
+    UserModal = get_user_model()
+    user = get_object_or_404(UserModal, username=username)
     if request.method == "POST":
         message = request.POST.get('message')
         Messages.objects.create(message=message, user=username)
