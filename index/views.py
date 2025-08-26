@@ -104,6 +104,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 def user_screen(request, username):
+    print(f"DEBUG: looking up username={username}")
     UserModal = get_user_model()
     user = get_object_or_404(UserModal, username=username)
     if request.method == "POST":
