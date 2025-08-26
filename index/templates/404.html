@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Page Not Found {% endblock %}
+
+{% block content %}
+<!--Body-->
+<div class="login-body" style="background-image: url(&quot;{% static 'images/login-hero.jpg' %}&quot;)">
+    <div class="overlay"></div> <!-- dark overlay for contrast -->
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="row justify-content-center w-100">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-form p-4 shadow-lg rounded text-center">
+                    <h1 class="mb-3 text-white">404</h1>
+                    <h4 class="text-light">Oops! Page Not Found</h4>
+                    <p class="text-light mb-4">
+                        The page you’re looking for doesn’t exist or may have been moved.
+                    </p>
+                    <a href="/" class="btn btn-primary w-100">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

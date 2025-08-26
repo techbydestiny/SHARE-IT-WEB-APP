@@ -19,6 +19,8 @@ from django.urls import path,include
 
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import handler404
+from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +28,8 @@ urlpatterns = [
     path('', include('index.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+def custom_page_not_found(request, exception):
+    return render(request, "404.html", status=404)
+
+handler404 = custom_page_not_found

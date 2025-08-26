@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ye42@rnm*^a2guj^)@s@o(pzc-+unbv+28%^@env*+9fl38$ke'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["shareit-d5pq.onrender.com", "localhost", "127.0.0.1", "shareitwebapp.onrender.com"]
 
